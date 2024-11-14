@@ -7,34 +7,14 @@
     "start": "electron .",
     "package": "electron-packager . app-launcher-widget --platform=win32 --arch=x64 --icon=assets/icon.ico --overwrite"
   },
-  "author": "Your Name",
-  "license": "MIT",
   "dependencies": {
-    "electron": "^25.3.1"
+    "electron": "^25.3.1",
+    "@electron/remote": "^2.0.7",
+    "dotenv": "^16.0.0",
+    "axios": "^0.27.2"
   },
   "devDependencies": {
-    "electron-packager": "^16.0.0"
-  },
-  "build": {
-    "appId": "com.example.applauncherwidget",
-    "productName": "App Launcher Widget",
-    "files": [
-      "**/*"
-    ],
-    "directories": {
-      "output": "dist"
-    },
-    "win": {
-      "icon": "assets/icon.ico",
-      "target": [
-        "nsis"
-      ]
-    },
-    "mac": {
-      "icon": "assets/icon.icns"
-    },
-    "linux": {
-      "icon": "assets/icon.png"
-    }
+    "electron-packager": "^16.0.0",
+    "electron-reload": "^1.5.0"
   }
 }
