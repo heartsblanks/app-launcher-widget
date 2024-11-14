@@ -1,3 +1,40 @@
-"scripts": {
-  "start": "electron ."
+{
+  "name": "app-launcher-widget",
+  "version": "1.0.0",
+  "description": "An Electron-based widget to automate app and website launching based on time.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-packager . app-launcher-widget --platform=win32 --arch=x64 --icon=assets/icon.ico --overwrite"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^25.3.1"
+  },
+  "devDependencies": {
+    "electron-packager": "^16.0.0"
+  },
+  "build": {
+    "appId": "com.example.applauncherwidget",
+    "productName": "App Launcher Widget",
+    "files": [
+      "**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "icon": "assets/icon.png"
+    }
+  }
 }
