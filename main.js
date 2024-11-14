@@ -28,3 +28,31 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
+
+ipcMain.on('open-apps', (event, category) => {
+  const appsToOpen = getAppsForCategory(category);
+  appsToOpen.forEach(app => {
+    // Use Node.js to open apps or URLs; examples:
+    if (app.type === 'app') {
+      require('child_process').exec(`open "${app.path}"`);
+    } else if (app.type === 'website') {
+      require('electron').shell.openExternal(app.url);
+    }
+  });
+});
+
+function getAppsForCategory(category) {
+  // Define apps based on category
+  if (category === 'on-call') {
+    return [
+      { type: 'app', path: '/path/to/your/on-call-app.exe' },
+      { type: 'website', url: 'https://on-call-tool.com' }
+    ];
+  } else if (category === 'regular') {
+    return [
+      { type: 'app', path: '/path/to/your/regular-app.exe' },
+      { type: 'website', url: 'https://regular-tool.com' }
+    ];
+  }
+  return [];
+}
