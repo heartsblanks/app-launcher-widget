@@ -1,0 +1,30 @@
+#widget {
+  position: fixed;
+  top: 10%;
+  right: 0;
+  width: 300px;
+  height: 80%;
+  background: #333;
+  color: white;
+  border-left: 1px solid #555;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.widget-collapsed {
+  width: 30px;
+}
+
+#apps-list {
+  padding: 10px;
+}
+
+button {
+  display: block;
+  margin: 5px 0;
+  background: #555;
+  color: white;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
