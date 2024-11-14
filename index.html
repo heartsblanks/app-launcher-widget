@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Launcher</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="widget" class="widget-collapsed">
+    <button onclick="toggleWidget()">▶</button>
+    <div id="apps-list" style="display: none;">
+      <h3>On-call Apps</h3>
+      <button onclick="openApps('on-call')">Open All</button>
+      <!-- Individual app buttons for on-call hours -->
+      <h3>Regular Apps</h3>
+      <button onclick="openApps('regular')">Open All</button>
+      <!-- Individual app buttons for regular hours -->
+      <h3>Other Apps</h3>
+      <!-- Option to add custom apps -->
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
